@@ -20,7 +20,7 @@ export default function Menu({ isOpen, setIsOpen, buttonRef }) {
     }, [isOpen, handleClickOutside]);
 
     return (
-        <nav ref={navRef} className={`absolute top-16 right-10 max-w-[250px] w-full bg-blue-500 rounded-xl shadow-xl border border-slate-200 origin-top-right md:scale-100 md:static md:max-w-full md:border-none md:shadow-none transform transition-all duration-500 ${isOpen ? "scale-100" : "scale-0"}`}>
+        <nav ref={navRef} className={`absolute top-16 right-10 max-w-[250px] w-full bg-blue-950 rounded-lg shadow-xl border border-slate-200 origin-top-right md:scale-100 md:static md:max-w-full md:border-none md:shadow-none transform transition-all duration-500 ${isOpen ? "scale-100" : "scale-0"} z-10`}>
             <ul className="md:flex text-center md:gap-5">
                 <ItemNav name="Home" to="/" />
                 <ItemNav name="Complete" to="/complete" />
