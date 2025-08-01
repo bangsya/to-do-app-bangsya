@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { Link } from "react-router";
+import ItemNav from "./ItemNav";
 
 export default function Menu({ isOpen, setIsOpen, buttonRef }) {
     const navRef = useRef(null);
@@ -19,11 +20,13 @@ export default function Menu({ isOpen, setIsOpen, buttonRef }) {
     }, [isOpen, handleClickOutside]);
 
     return (
-        <nav ref={navRef} className={`absolute top-16 right-10 max-w-[250px] w-full bg-blue-500 rounded-md shadow-xl border border-slate-200 origin-top-right md:scale-100 md:static md:flex md:items-center md:w-auto transform transition-all duration-500 ${isOpen ? "scale-100" : "scale-0"}`}>
-            <ul className="md:flex text-center">
-                <li className="p-3 md:p-0 md:ml-4 font-medium"><Link to="/" className="hover:text-blue-900">Home</Link></li>
-                <li className="p-3 md:p-0 md:ml-4 font-medium"><Link to="/about" className="hover:text-blue-900">About</Link></li>
-                <li className="p-3 md:p-0 md:ml-4 font-medium"><Link to="/contact" className="hover:text-blue-900">Contact</Link></li>
+        <nav ref={navRef} className={`absolute top-16 right-10 max-w-[250px] w-full bg-blue-500 rounded-xl shadow-xl border border-slate-200 origin-top-right md:scale-100 md:static md:max-w-full md:border-none md:shadow-none transform transition-all duration-500 ${isOpen ? "scale-100" : "scale-0"}`}>
+            <ul className="md:flex text-center md:gap-5">
+                <ItemNav name="Home" to="/" />
+                <ItemNav name="Complete" to="/complete" />
+                <ItemNav name="Pending" to="/pending" />
+                <ItemNav name="Add" to="/add" />
+                <ItemNav name="About" to="/about" />
             </ul>
         </nav>
     );
