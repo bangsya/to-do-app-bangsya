@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef } from "react";
-import { Link } from "react-router";
 import ItemNav from "./ItemNav";
 
 export default function Menu({ isOpen, setIsOpen, buttonRef }) {
@@ -22,11 +21,11 @@ export default function Menu({ isOpen, setIsOpen, buttonRef }) {
     return (
         <nav ref={navRef} className={`absolute top-16 right-10 max-w-[250px] w-full bg-blue-950 rounded-lg shadow-xl border border-slate-200 origin-top-right md:scale-100 md:static md:max-w-full md:border-none md:shadow-none transform transition-all duration-500 ${isOpen ? "scale-100" : "scale-0"} z-10`}>
             <ul className="md:flex text-center md:gap-5">
-                <ItemNav name="Home" to="/" />
-                <ItemNav name="Complete" to="/complete" />
-                <ItemNav name="Pending" to="/pending" />
-                <ItemNav name="Add" to="/add" />
-                <ItemNav name="About" to="/about" />
+                <ItemNav name="Home" to="/" onNavigate={() => setIsOpen(false)}/>
+                <ItemNav name="Complete" to="/complete" onNavigate={() => setIsOpen(false)}/>
+                <ItemNav name="Pending" to="/pending" onNavigate={() => setIsOpen(false)}/>
+                <ItemNav name="Add" to="/add" onNavigate={() => setIsOpen(false)}/>
+                <ItemNav name="About" to="/about" onNavigate={() => setIsOpen(false)}/>
             </ul>
         </nav>
     );
