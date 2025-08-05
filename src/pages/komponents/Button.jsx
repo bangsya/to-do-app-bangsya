@@ -1,5 +1,5 @@
-export default function Button({ label, onClick }) {
+export default function Button({ label, onClick, color, textColor, width = "" }) {
     return (
-        <button onClick={onClick} className="ml-4 px-4 py-2 bg-blue-200 text-blue-600 font-medium rounded-lg cursor-pointer">{label}</button>
+        <button onClick={onClick} className={`px-4 py-2 ${color} ${textColor} font-medium rounded-lg cursor-pointer ${width}`}>{label}</button>
     );
 }

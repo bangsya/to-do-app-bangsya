@@ -1,22 +1,17 @@
 import { todos } from "../todos";
-import Button from "./komponents/Button";
 import Card from "./komponents/Card";
 import JudulSection from "./komponents/JudulSection";
 import Section from "./komponents/Section";
 
-export default function Home(){
-    
+export default function Complete (){
     return (
-        <Section name="Home">
-            <div className="flex justify-between items-center">
-                <JudulSection title="My To-Do List" />
-                <Button label="+ New Task" onClick={() => alert("Add Task Clicked")} textColor="text-blue-600" color="bg-blue-200" />
-            </div>
+        <Section name="Complete">
+            <JudulSection title="Completed Tasks" />
             <div className="container-card flex flex-wrap box-border">
-                {todos.map(todo => (
+                {todos.filter(todo => todo.completed === true).map(todo => (
                     <Card key={todo.id} judul={todo.judul} deskripsi={todo.deskripsi} tanggal={todo.tanggal} completed={todo.completed} />
                 ))}
             </div>
         </Section>
-    )
+    );
 }
