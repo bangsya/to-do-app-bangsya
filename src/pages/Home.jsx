@@ -1,3 +1,4 @@
+import { todos } from "../todos";
 import Button from "./komponents/Button";
 import Card from "./komponents/Card";
 
@@ -11,8 +12,9 @@ export default function Home(){
                     <Button label="+ New Task" onClick={() => alert("Add Task Clicked")} />
                 </div>
                 <div className="container-card flex flex-wrap mx-5 box-border">
-                    <Card />
-                    <Card />
+                    {todos.map(todo => (
+                        <Card key={todo.id} judul={todo.judul} deskripsi={todo.deskripsi} tanggal={todo.tanggal} completed={todo.completed} />
+                    ))}
                 </div>
             </div>
         </section>
