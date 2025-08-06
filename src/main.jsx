@@ -8,6 +8,8 @@ import Page404 from './pages/Page404'
 import Complete from './pages/Complete'
 import Pending from './pages/Pending'
 import About from './pages/About'
+import AddTodo from './pages/AddTodo'
+import EditTodo from './EditTodo'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -17,6 +19,8 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<Home />} />
           <Route path="complete" element={<Complete />} />
           <Route path="pending" element={<Pending />} />
+          <Route path="add" element={<AddTodo />} />
+          <Route path="edit/:id" element={<EditTodo />} />
           <Route path='about' element={<About />} />
           <Route path="*" element={<Page404 />} />
         </Route>

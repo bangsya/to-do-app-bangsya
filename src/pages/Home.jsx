@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { todos } from "../todos";
 import Button from "./komponents/Button";
 import Card from "./komponents/Card";
@@ -10,7 +11,9 @@ export default function Home(){
         <Section name="Home">
             <div className="flex justify-between items-center">
                 <JudulSection title="My To-Do List" />
-                <Button label="+ New Task" onClick={() => alert("Add Task Clicked")} textColor="text-blue-600" color="bg-blue-200" />
+                <Link to="/add">
+                    <Button label="+ New Task" onClick={() => {}} textColor="text-blue-600" color="bg-blue-200" />
+                </Link>
             </div>
             <div className="container-card flex flex-wrap box-border">
                 {todos.map(todo => (
