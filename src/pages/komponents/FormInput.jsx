@@ -20,7 +20,9 @@ export default function FormInput({action = ""}) {
                 placeholder="Task Description"
                 className="border border-gray-300 p-2 rounded w-full mt-1 mb-7"
             ></textarea>
-            <Button label="Add Todo" onClick={() => {}} color="bg-blue-200" textColor="text-blue-700" width="w-full" />
+            <Button label="Add Todo" onClick={(e) => {
+                e.preventDefault();
+            }} color="bg-blue-200" textColor="text-blue-700" width="w-full" />
         </form>
     );
 }

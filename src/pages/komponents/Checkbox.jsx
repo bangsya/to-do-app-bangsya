@@ -1,13 +1,11 @@
-import { useState } from "react";
 
-export default function Checkbox({completed}) {
-    const [checked, setChecked] = useState(completed);
+export default function Checkbox({completed, onChange}) {
     return (
         <label className="relative inline-block h-8 w-8">
             <input type="checkbox" className="appearance-none h-8 w-8 rounded-full border border-blue-950/20 bg-blue-500/20 checked:bg-blue-500 checked:border-blue-500 transition-colors cursor-pointer hover:scale-105"
-                onChange={() => setChecked(!checked)}
-                checked={checked}/>
-            {checked && (
+                onChange={onChange}
+                checked={completed}/>
+            {completed && (
                 <svg
                     className="absolute left-1 top-1 w-6 h-6 text-white pointer-events-none"
                     fill="none"

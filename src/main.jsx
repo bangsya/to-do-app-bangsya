@@ -9,22 +9,26 @@ import Complete from './pages/Complete'
 import Pending from './pages/Pending'
 import About from './pages/About'
 import AddTodo from './pages/AddTodo'
-import EditTodo from './EditTodo'
+import EditTodo from './pages/EditTodo'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LayoutNavigasi />}>
-          <Route index element={<Home />} />
-          <Route path="complete" element={<Complete />} />
-          <Route path="pending" element={<Pending />} />
-          <Route path="add" element={<AddTodo />} />
-          <Route path="edit/:id" element={<EditTodo />} />
-          <Route path='about' element={<About />} />
-          <Route path="*" element={<Page404 />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LayoutNavigasi />}>
+            <Route index element={<Home />} />
+            <Route path="complete" element={<Complete />} />
+            <Route path="pending" element={<Pending />} />
+            <Route path="add" element={<AddTodo />} />
+            <Route path="edit/:id" element={<EditTodo />} />
+            <Route path='about' element={<About />} />
+            <Route path="*" element={<Page404 />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>,
 )

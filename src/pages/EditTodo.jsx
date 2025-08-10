@@ -1,6 +1,6 @@
-import FormInput from "./pages/komponents/FormInput";
-import JudulSection from "./pages/komponents/JudulSection";
-import Section from "./pages/komponents/Section";
+import FormInput from "./komponents/FormInput";
+import JudulSection from "./komponents/JudulSection";
+import Section from "./komponents/Section";
 
 export default function EditTodo() {
     return (
