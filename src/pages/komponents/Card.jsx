@@ -3,9 +3,11 @@ import Button from "./Button";
 import Checkbox from "./Checkbox";
 import { checkedTodo } from "../../redux/slice/todoSlice";
 
-export default function Card({id, judul, deskripsi, tanggal, completed, handleDelete}) {
+export default function Card({id, judul, deskripsi, tanggal, completed, handleDelete, handleEdit}) {
     // const todos = useSelector(state => state.todolist);
     const dispatch = useDispatch();
+
+    tanggal = new Date(tanggal);
 
     return (
         <div className="card py-4 px-4 w-full lg:w-1/2 box-border">
@@ -23,7 +25,7 @@ export default function Card({id, judul, deskripsi, tanggal, completed, handleDe
                     </div>
                     <div className="aksi flex flex-col items-center gap-1 w-1/4">
                         <Checkbox completed={completed} onChange={() => dispatch(checkedTodo({id, completed: !completed}))}/>
-                        <Button label="Edit" onClick={() => alert("Edit Clicked")} color="bg-yellow-200" textColor="text-yellow-600" width="w-full"/>
+                        <Button label="Edit" onClick={handleEdit} color="bg-yellow-200" textColor="text-yellow-600" width="w-full"/>
                         <Button label="Delete" onClick={handleDelete} color="bg-red-200" textColor="text-red-600" width="w-full"/>
                     </div>
                 </div>

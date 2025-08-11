@@ -21,7 +21,14 @@ export default function Home(){
             </div>
             <div className="container-card flex flex-wrap box-border">
                 {todoLists.map(todo => (
-                    <Card key={todo.id} id={todo.id} judul={todo.judul} deskripsi={todo.deskripsi} tanggal={todo.tanggal} completed={todo.completed} handleDelete={() => dispatch(removeTodo({ id: todo.id }))} />
+                    <Card key={todo.id} 
+                        id={todo.id} 
+                        judul={todo.judul} 
+                        deskripsi={todo.deskripsi} 
+                        tanggal={todo.tanggal} 
+                        completed={todo.completed} 
+                        handleDelete={() => dispatch(removeTodo({ id: todo.id }))} 
+                        handleEdit={() => navigate(`/edit/${todo.id}`)} />
                 ))}
             </div>
         </Section>

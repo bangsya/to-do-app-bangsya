@@ -12,7 +12,7 @@ export const todoSlice = createSlice({
                 id: state.length + 1,
                 judul: name,
                 deskripsi: description,
-                tanggal: new Date(),
+                tanggal: new Date().toISOString(),
                 completed: false
             };
             state.push(newTodo);
